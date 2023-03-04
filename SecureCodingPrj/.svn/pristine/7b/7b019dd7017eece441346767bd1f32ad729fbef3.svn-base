@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<title>AI 휴먼포털 - AI기술 허브 플랫폼 구축</title>
+
+<link rel="stylesheet" href="../../css/import.css" media="all">
+<script src="../../js/lib/jquery/jquery-3.6.0.js"></script>
+<script src="../../js/lib/jquery/jquery-ui.1.12.1.js"></script>
+<script src="../../js/lib/jquery/jquery.easing.1.4.1.js"></script>
+
+<script src="../../js/com/pub.ui.common.js" defer></script><!-- 퍼블리싱 콘트롤 js -->
+</head>
+<body>
+	<!-- 웹 접근성 skip navigation -->
+	<div class="skip">
+		<a href="#contentsWrap">분문으로 이동</a>
+		<a href="#footer">하단으로 이동</a>
+	</div>
+	
+	<div class="login-container">
+		<div class="login-wrap">
+			<div class="login-visual type2">
+				<p class="font-100">Welcome to</p>
+				<p>
+					<strong class="elice">AI</strong>
+					<strong class="elice" style="letter-spacing:-0.28em;">휴먼포털</strong>
+				</p>
+			</div>
+			<div class="login-cont">
+				<p class="title">로그인</p>
+
+				<div class="form-area">
+					<div class="write">
+						<input type="text" title="아이디 입력" placeholder="아이디" />
+						<input type="password" title="비밀번호 입력" placeholder="비밀번호" />
+					</div>
+
+					<div class="btn-login">
+						<a href="">LOGIN</a>
+					</div>
+				</div>
+
+				<ul class="dot-list">
+					<li>초기비밀번호 : 사번이랑 동일하며 비밀번호 변경 후 사용 가능합니다.</li>
+					<li>농협 내부직원은 통합로그인을 통하여 접속 바랍니다.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+function myFunction() {
+	//alert("hp_co_01.html");
+	
+	<!-- var id = document.getElementById('id'); -->
+	<!-- var pwd = document.getElementById('pwd'); -->
+
+	<!-- alert("id=" + id.value); -->
+	<!-- alert("pwd=" + pwd.value); -->
+
+	var ai_title = document.getElementById("ai_title");
+	ai_title.innerText = " 기술허브포탈";
+
+	<!-- var id = document.getElementsByName("id"); -->
+	<!-- var pwd = document.getElementsByName("pwd"); -->
+	
+	<!-- alert("id=" + id[0].value); -->
+	<!-- alert("pwd=" + pwd[0].value); -->
+	
+
+}

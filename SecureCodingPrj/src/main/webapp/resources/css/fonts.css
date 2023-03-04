@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+
+@font-face {
+	font-family: 'EliceDigitalBaeum';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/EliceDigitalCodingOTF_Regular.otf'); 
+	src: local('EliceDigitalBaeum'),/* Super Modern Browsers */
+		 url('../fonts/EliceDigitalCodingverH_Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+	font-family: 'EliceDigitalBaeum';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../fonts/EliceDigitalCodingOTF_Bold.otf'); 
+	src: local('EliceDigitalBaeum'),/* Super Modern Browsers */
+		 url('../fonts/EliceDigitalCodingverH_Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+
+@font-face {
+	font-family:'Spoqa Han Sans Neo';
+	font-style: normal;
+	font-weight: 100;
+	font-display: swap;
+	src: url('../fonts/SpoqaHanSansNeo-Thin.otf');
+	src: local('Spoqa Han Sans Neo'), local('SpoqaHanSansNeo'), 
+		 url('../fonts/SpoqaHanSansNeo-Thin.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/SpoqaHanSansNeo-Thin.woff') format('woff'); /* Modern Browsers */
+}
+
+@font-face {
+	font-family:'Spoqa Han Sans Neo';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../fonts/SpoqaHanSansNeo-Regular.otf');
+	src: local('Spoqa Han Sans Neo'), local('SpoqaHanSansNeo'), 
+		 url('../fonts/SpoqaHanSansNeo-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/SpoqaHanSansNeo-Regular.woff') format('woff'); /* Modern Browsers */
+}
+
+@font-face {
+	font-family:'Spoqa Han Sans Neo';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../fonts/SpoqaHanSansNeo-Bold.otf');
+	src: local('Spoqa Han Sans Neo'), local('SpoqaHanSansNeo'), 
+		 url('../fonts/SpoqaHanSansNeo-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../fonts/SpoqaHanSansNeo-Bold.woff') format('woff'); /* Modern Browsers */
+}
