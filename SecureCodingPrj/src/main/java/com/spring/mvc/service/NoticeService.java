@@ -23,6 +23,8 @@ public interface NoticeService {
      * @메소드타입 : NoticeService
      * @메소드명 : selectOneNotice
      * @return : NoticeDto
+     * @param noticeDto
+     * @return
      */
     NoticeDto selectOneNotice(NoticeDto noticeDto);
 
@@ -30,6 +32,8 @@ public interface NoticeService {
      * @메소드타입 : NoticeService
      * @메소드명 : insertNotice
      * @return : int
+     * @param noticeDto
+     * @return
      */
     int insertNotice(NoticeDto noticeDto);
 
@@ -37,6 +41,8 @@ public interface NoticeService {
      * @메소드타입 : NoticeService
      * @메소드명 : deleteNotice
      * @return : int
+     * @param noticeDto
+     * @return
      */
     int deleteNotice(NoticeDto noticeDto);
 
@@ -44,6 +50,8 @@ public interface NoticeService {
      * @메소드타입 : NoticeService
      * @메소드명 : updateNotice
      * @return : int
+     * @param noticeDto
+     * @return
      */
     int updateNotice(NoticeDto noticeDto);
 }

@@ -27,7 +27,7 @@ import org.apache.logging.log4j.Logger;
  * @프로젝트명 : SecureCodingPrj
  * @패키지명 : com.spring.mvc.util
  * @파일명 : AESUtil.java
- * @작성일 : 2023. 3. 5.
+ * @작성일 : 2023. 3. 6.
  * @작성자 : 김영철
  */
 public class AESUtil {
@@ -40,7 +40,7 @@ public class AESUtil {
 
     /**
      * @필드타입 : byte[]
-     * @필드명 : bytesIV
+     * @필드명 : gBytes
      */
     private byte[] gBytes;
 
@@ -66,6 +66,8 @@ public class AESUtil {
      * @return : SecretKey
      * @param algorithm
      * @param keysize
+     * @return
+     * @throws NoSuchAlgorithmException
      */
     public SecretKey generateKey(final String algorithm, final int keysize) throws NoSuchAlgorithmException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance(algorithm); // "AES"
@@ -79,8 +81,14 @@ public class AESUtil {
      * @return : String
      * @param standardCipher
      * @param key
-     * @param bytesIv
      * @param input
+     * @return
+     * @throws NoSuchAlgorithmException
+     * @throws NoSuchPaddingException
+     * @throws InvalidKeyException
+     * @throws InvalidAlgorithmParameterException
+     * @throws IllegalBlockSizeException
+     * @throws BadPaddingException
      */
     public String encrypt(final String standardCipher, final Key key, final String input)
             throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
@@ -102,12 +110,19 @@ public class AESUtil {
 
     /**
      * @메소드타입 : AESUtil
-     * @메소드명 : decryptAES
+     * @메소드명 : decrypt
      * @return : String
      * @param standardCipher
      * @param key
      * @param bytesIv
      * @param input
+     * @return
+     * @throws NoSuchAlgorithmException
+     * @throws NoSuchPaddingException
+     * @throws InvalidKeyException
+     * @throws InvalidAlgorithmParameterException
+     * @throws IllegalBlockSizeException
+     * @throws BadPaddingException
      */
     public String decrypt(final String standardCipher, final Key key, final String bytesIv, final String input)
             throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
@@ -125,6 +140,7 @@ public class AESUtil {
      * @메소드명 : noPadding
      * @return : String
      * @param cbcText
+     * @return
      */
     public String noPadding(final String cbcText) {
         byte[] bytes = cbcText.getBytes();
