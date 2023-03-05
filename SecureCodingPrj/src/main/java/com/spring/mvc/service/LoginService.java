@@ -29,8 +29,8 @@ public interface LoginService {
      * @메소드명 : userLogin
      * @return : KeyPairVo
      * @return
-     * @throws NoSuchAlgorithmException 
-     * @throws IOException 
+     * @throws NoSuchAlgorithmException
+     * @throws IOException
      * @throws Exception
      */
     KeyPairVo userLogin() throws NoSuchAlgorithmException, IOException;
@@ -42,14 +42,16 @@ public interface LoginService {
      * @param privateKey
      * @param userDto
      * @return
-     * @throws ParseException 
-     * @throws InvalidAlgorithmParameterException 
-     * @throws BadPaddingException 
-     * @throws IllegalBlockSizeException 
-     * @throws NoSuchPaddingException 
-     * @throws NoSuchAlgorithmException 
-     * @throws InvalidKeyException 
+     * @throws ParseException
+     * @throws InvalidAlgorithmParameterException
+     * @throws BadPaddingException
+     * @throws IllegalBlockSizeException
+     * @throws NoSuchPaddingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeyException
      * @throws Exception
      */
-    UserDto loginConfirm(PrivateKey privateKey, UserDto userDto) throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, ParseException;
+    UserDto loginConfirm(PrivateKey privateKey, UserDto userDto)
+            throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException,
+            BadPaddingException, InvalidAlgorithmParameterException, ParseException;
 }

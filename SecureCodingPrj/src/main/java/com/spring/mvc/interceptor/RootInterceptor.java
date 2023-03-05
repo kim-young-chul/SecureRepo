@@ -18,6 +18,10 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  */
 public class RootInterceptor extends HandlerInterceptorAdapter {
 
+    /**
+     * @필드타입 : Logger
+     * @필드명 : LOG
+     */
     private static final Logger LOG = LogManager.getLogger(RootInterceptor.class);
 
     /**

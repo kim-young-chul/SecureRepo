@@ -66,6 +66,8 @@ public class NoticeController {
      * @메소드타입 : NoticeController
      * @메소드명 : noticeUpdate
      * @return : ModelAndView
+     * @param noticeDto
+     * @return
      */
     @GetMapping("/servlet/notice_update")
     public ModelAndView noticeUpdate(final NoticeDto noticeDto) {
@@ -94,6 +96,8 @@ public class NoticeController {
      * @메소드타입 : NoticeController
      * @메소드명 : noticeDelete
      * @return : String
+     * @param noticeDto
+     * @return
      */
     @GetMapping("/servlet/notice_delete")
     public String noticeDelete(final NoticeDto noticeDto) {
@@ -111,6 +115,8 @@ public class NoticeController {
      * @메소드타입 : NoticeController
      * @메소드명 : insertNotice
      * @return : String
+     * @param noticeDto
+     * @return
      */
     @PostMapping("/servlet/insert_notice")
     public String insertNotice(final NoticeDto noticeDto) {
@@ -122,6 +128,8 @@ public class NoticeController {
      * @메소드타입 : NoticeController
      * @메소드명 : updateNotice
      * @return : String
+     * @param noticeDto
+     * @return
      */
     @PostMapping("/servlet/update_notice")
     public String updateNotice(final NoticeDto noticeDto) {
