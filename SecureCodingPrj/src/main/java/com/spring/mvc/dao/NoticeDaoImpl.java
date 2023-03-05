@@ -48,6 +48,7 @@ public class NoticeDaoImpl implements NoticeDao {
 
     /**
      * @메소드타입 : NoticeDaoImpl
+     * @param paramTemplate
      */
     public NoticeDaoImpl(final SqlSessionTemplate paramTemplate) {
         this.template = paramTemplate;

@@ -22,7 +22,6 @@ public interface UserDao {
     /**
      * @메소드타입 : UserDao
      * @메소드명 : insertUser
-     * @return : void
      * @param userid
      * @param userpw
      * @param idnumber

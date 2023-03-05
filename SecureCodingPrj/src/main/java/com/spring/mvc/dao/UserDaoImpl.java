@@ -40,6 +40,7 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * @메소드타입 : UserDaoImpl
+     * @param paramTemplate
      */
     public UserDaoImpl(final SqlSessionTemplate paramTemplate) {
         this.template = paramTemplate;
