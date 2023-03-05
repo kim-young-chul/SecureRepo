@@ -11,19 +11,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <org.springframework-version>5.0.0.RELEASE</org.springframework-version>
         <org.jacoco-version>0.8.8</org.jacoco-version>
+        <checkstyle-version>3.2.1</checkstyle-version>
     </properties>
     <build>
         <plugins>
+            <!-- checkstyle plugin -->
             <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${checkstyle-version}</version>
                 <configuration>
-                    <release>17</release>
+                    <configLocation>wiseeco-checkstyle.xml</configLocation>
                 </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.3</version>
             </plugin>
             <!-- jacoco plugin -->
             <plugin>
@@ -49,6 +48,17 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.3</version>
             </plugin>
         </plugins>
     </build>
