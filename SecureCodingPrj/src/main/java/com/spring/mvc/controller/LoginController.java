@@ -69,11 +69,15 @@ public class LoginController {
      */
     @GetMapping("/servlet/user_login")
     public ModelAndView userLogin(final HttpSession session) throws NoSuchAlgorithmException, IOException {
+
         final ModelAndView mav = new ModelAndView();
+
         KeyPairVo keyPairVo = loginService.userLogin();
+
         session.setAttribute("privateKey", keyPairVo.getPrivateKey());
         mav.addObject("base64PublicKey", keyPairVo.getPemPublicKey());
         mav.setViewName("user_login");
+
         return mav;
     }
 
@@ -105,7 +109,7 @@ public class LoginController {
      * @throws ParseException
      */
     @PostMapping("/servlet/login_confirm")
-    public ModelAndView loginConfirm(final HttpSession session, UserDto userDto)
+    public ModelAndView loginConfirm(final HttpSession session, final UserDto userDto)
             throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException,
             BadPaddingException, InvalidAlgorithmParameterException, ParseException {
         final PrivateKey privateKey = (PrivateKey) session.getAttribute("privateKey");

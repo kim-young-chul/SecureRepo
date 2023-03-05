@@ -5,7 +5,7 @@
   */
 package com.spring.mvc.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -13,13 +13,9 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.spring.mvc.dao.NoticeDao;
 import com.spring.mvc.dto.NoticeDto;
@@ -31,10 +27,6 @@ import com.spring.mvc.dto.NoticeDto;
  * @작성일 : 2023. 2. 28.
  * @작성자 : 김영철
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml",
-        "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" })
-@WebAppConfiguration
 public class NoticeServiceTest {
 
     @Mock
@@ -110,5 +102,4 @@ public class NoticeServiceTest {
     public final void testUpdateNotice() {
         assertNotNull(noticeService);
     }
-
 }

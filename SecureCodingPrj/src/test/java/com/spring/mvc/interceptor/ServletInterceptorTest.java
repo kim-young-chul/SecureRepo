@@ -17,25 +17,17 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
- * @프로젝트명 : AIBK-Security
+ * @프로젝트명 : SecureCodingPrj
  * @패키지명 : com.spring.mvc.interceptor
  * @파일명 : ServletInterceptorTest.java
- * @작성일 : 2023. 2. 28.
+ * @작성일 : 2023. 3. 5.
  * @작성자 : 김영철
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml",
-        "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" })
-@WebAppConfiguration
 public class ServletInterceptorTest {
 
     @Mock
@@ -137,5 +129,4 @@ public class ServletInterceptorTest {
         when(session.getAttribute("grade")).thenReturn("manager");
         assertTrue(servletInterceptor.preHandle(request, response, handler));
     }
-
 }

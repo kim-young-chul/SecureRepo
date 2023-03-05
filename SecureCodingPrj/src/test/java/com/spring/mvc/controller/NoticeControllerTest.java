@@ -2,13 +2,9 @@ package com.spring.mvc.controller;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.servlet.ModelAndView;
 import com.spring.mvc.dto.NoticeDto;
 import com.spring.mvc.service.NoticeService;
@@ -16,10 +12,6 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import java.util.List;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml",
-        "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" })
-@WebAppConfiguration
 public class NoticeControllerTest {
 
     @Mock

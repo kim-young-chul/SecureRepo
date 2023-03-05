@@ -28,10 +28,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.spring.mvc.dto.UserDto;
 
 /**
- * @프로젝트명 : AIBK-Security
+ * @프로젝트명 : SecureCodingPrj
  * @패키지명 : com.spring.mvc.interceptor
  * @파일명 : LoginInterceptorTest.java
- * @작성일 : 2023. 2. 28.
+ * @작성일 : 2023. 3. 5.
  * @작성자 : 김영철
  */
 public class LoginInterceptorTest {
