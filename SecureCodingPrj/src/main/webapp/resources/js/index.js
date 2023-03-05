@@ -1,4 +1,5 @@
 $(document).ready(function() {
     let domain = $("#reurl").val();
-    window.location.replace(domain + "/servlet/user_login");
+    let address = domain + "/servlet/user_login";
+    window.location.replace(address);
 })
