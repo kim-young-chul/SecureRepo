@@ -9,21 +9,12 @@
     <packaging>war</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework-version>5.0.0.RELEASE</org.springframework-version>
+        <org.springframework-version>5.0.16.RELEASE</org.springframework-version>
         <org.jacoco-version>0.8.8</org.jacoco-version>
         <checkstyle-version>3.2.1</checkstyle-version>
     </properties>
     <build>
         <plugins>
-            <!-- checkstyle plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle-version}</version>
-                <configuration>
-                    <configLocation>wiseeco-checkstyle.xml</configLocation>
-                </configuration>
-            </plugin>
             <!-- jacoco plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
