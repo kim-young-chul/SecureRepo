@@ -24,13 +24,19 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * @프로젝트명 : AIBK-Security
+ * @프로젝트명 : SecureCodingPrj
  * @패키지명 : com.spring.mvc.util
  * @파일명 : AESUtil.java
- * @작성일 : 2023. 3. 2.
+ * @작성일 : 2023. 3. 5.
  * @작성자 : 김영철
  */
 public class AESUtil {
+
+    /**
+     * @필드타입 : int
+     * @필드명 : IV_SIZE
+     */
+    private static final int IV_SIZE = 16;
 
     /**
      * @필드타입 : byte[]
@@ -84,7 +90,7 @@ public class AESUtil {
         Cipher cipher = Cipher.getInstance(standardCipher);
 
         SecureRandom random = new SecureRandom();
-        byte[] bytesIV = new byte[16];
+        byte[] bytesIV = new byte[IV_SIZE];
         random.nextBytes(bytesIV); // Random initialization vector
         IvParameterSpec ivParameterSpec = new IvParameterSpec(bytesIV);
         this.gBytes = bytesIV;
