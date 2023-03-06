@@ -52,16 +52,16 @@
 	</filter-mapping>
 
 	<!-- xssEscapeServletFilter는 CharacterEncodingFilter 뒤에 위치해야 한다. -->
-	<filter>
-		<filter-name>xssEscapeServletFilter</filter-name>
-		<filter-class>com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>xssEscapeServletFilter</filter-name>
-		<url-pattern>/servlet/*</url-pattern>
-		<url-pattern>/resources/js/*</url-pattern>
-		<url-pattern>/resources/css/*</url-pattern>
-	</filter-mapping>
+<!-- 	<filter> -->
+<!-- 		<filter-name>xssEscapeServletFilter</filter-name> -->
+<!-- 		<filter-class>com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>xssEscapeServletFilter</filter-name> -->
+<!-- 		<url-pattern>/servlet/*</url-pattern> -->
+<!-- 		<url-pattern>/resources/js/*</url-pattern> -->
+<!-- 		<url-pattern>/resources/css/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
 	
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

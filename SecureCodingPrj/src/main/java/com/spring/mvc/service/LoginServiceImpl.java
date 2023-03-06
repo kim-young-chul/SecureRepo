@@ -86,11 +86,11 @@ public class LoginServiceImpl implements LoginService {
         String decryptedPw = decryptPw(privateKey, userDto);
         userDto.setUserpw(decryptedPw);
         LOG.debug("decryptedPw ... {}", decryptedPw);
-        if (this.verifyPattern(userDto)) {
-            String encryptedPw = this.encryptPw(userDto);
-            userDto.setUserpw(encryptedPw);
+//        if (this.verifyPattern(userDto)) {
+//            String encryptedPw = this.encryptPw(userDto);
+//            userDto.setUserpw(encryptedPw);
             userDtoOut = userDao.userLogin(userDto);
-        }
+//        }
         return userDtoOut;
     }
 
@@ -168,6 +168,8 @@ public class LoginServiceImpl implements LoginService {
     private boolean verifyPattern(final UserDto userDto) {
         final boolean userIdResult = Pattern.matches("[A-Za-z0-9-_]*", userDto.getUserid());
         final boolean userPwResult = Pattern.matches("[A-Za-z0-9-_!@#%+]*", userDto.getUserpw());
+        LOG.debug("userIdResult ... {}", userIdResult);
+        LOG.debug("userPwResult ... {}", userPwResult);
         return userIdResult && userPwResult;
     }
 

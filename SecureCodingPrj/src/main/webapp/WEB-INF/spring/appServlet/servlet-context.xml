@@ -60,15 +60,15 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 
-	<bean id="simpleMappingExceptionResolver"
-		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-		<property name="exceptionMappings">
-			<map>
-				<entry key="Exception" value="error" />
-			</map>
-		</property>
-		<property name="defaultErrorView" value="error" />
-		<property name="exceptionAttribute" value="ex" />
-	</bean>
+<!-- 	<bean id="simpleMappingExceptionResolver" -->
+<!-- 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver"> -->
+<!-- 		<property name="exceptionMappings"> -->
+<!-- 			<map> -->
+<!-- 				<entry key="Exception" value="error" /> -->
+<!-- 			</map> -->
+<!-- 		</property> -->
+<!-- 		<property name="defaultErrorView" value="error" /> -->
+<!-- 		<property name="exceptionAttribute" value="ex" /> -->
+<!-- 	</bean> -->
     
 </beans>
