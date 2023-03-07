@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/resources/css/notice.css" type="text/css" />
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/js/user_login.js"></script>
-<script type="text/javascript" src="/resources/js/lib/hybrid-crypto-0.2.4.js"></script>
+<script type="text/javascript" src="/resources/js/lib/hybrid-crypto.min.js"></script>
 </head>
 <body>
 	<input type="hidden" id="base64PublicKey" name="base64PublicKey" value="${base64PublicKey}">

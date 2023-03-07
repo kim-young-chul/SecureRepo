@@ -55,7 +55,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             throws Exception {
         LOG.debug("userid ... {}", request.getParameter("userid"));
         LOG.debug("userpw ... {}", request.getParameter("userpw"));
-        
+
         HttpSession session = request.getSession();
         LOG.trace("session.getId ... {}", session.getId());
 
