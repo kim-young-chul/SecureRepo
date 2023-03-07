@@ -1,3 +1,4 @@
 $(document).ready(function() {
-    window.location.replace($("body").find("input").attr("value") + "/servlet/user_login");
+    let target = $.find("#reurl");
+    window.location.replace($(target).val() + "/servlet/user_login");
 })
