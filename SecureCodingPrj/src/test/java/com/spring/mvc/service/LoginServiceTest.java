@@ -116,7 +116,8 @@ public class LoginServiceTest {
         JSONObject jsonObj = (JSONObject) jsonParser.parse(jsonString);
         LOG.debug("jsonObj.toString() ... {}", jsonObj.toString());
 
-        JSONObject keys = new JSONObject();
+//        JSONObject keys = new JSONObject();
+        JSONObject keys;
         jsonObj.replace("iv", base64strIv);
         jsonObj.replace("cipher", base64Encrypt);
         keys = (JSONObject) jsonObj.get("keys");

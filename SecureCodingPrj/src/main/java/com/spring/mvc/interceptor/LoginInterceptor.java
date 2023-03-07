@@ -53,6 +53,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler)
             throws Exception {
+        LOG.debug("userid ... {}", request.getParameter("userid"));
+        LOG.debug("userpw ... {}", request.getParameter("userpw"));
+        
         HttpSession session = request.getSession();
         LOG.trace("session.getId ... {}", session.getId());
 
