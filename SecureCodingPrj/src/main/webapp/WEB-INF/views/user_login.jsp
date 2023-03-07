@@ -7,8 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>user login</title>
 <link rel="stylesheet" href="/resources/css/notice.css" type="text/css" />
-<script type="text/javascript" src="/resources/js/jquery-3.6.3.slim.min.js"></script>
-<script type="text/javascript" src="/resources/js/jsencrypt.min.js"></script>
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/js/user_login.js"></script>
 <script type="text/javascript" src="/resources/js/lib/hybrid-crypto-0.2.4.js"></script>

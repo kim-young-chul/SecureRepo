@@ -2,5 +2,5 @@
  * Java Script
  */
 window.onload = function() {
-    window.location.replace("/servlet/user_login");
+    location.href = "/servlet/user_login";
 }

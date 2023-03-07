@@ -1,20 +1,18 @@
 /**
- * notice_list javascript file
+ * Java Script
  */
-$(document).ready(function() {
+window.onload = function() {
 
-	$("#noticeWrite").click(function() {
-		location.href = "/servlet/notice_write";
-	})
+    document.getElementById("userLogout").addEventListener("click", function() {
+        location.href = "/servlet/user_logout";
+    });
 
-	$("#userLogout").click(function() {
-		location.href = "/servlet/user_logout";
-	})
+    document.getElementById("file").addEventListener("change", function() {
+        let fileName = document.getElementById("file").value;
+        document.querySelector(".upload-name").value = fileName;
+    })
 
-	$("#file").on('change', function() {
-		let fileName = $("#file").val();
-		$(".upload-name").val(fileName);
-	})
-
-})
-
+    document.getElementById("noticeWrite").addEventListener("click", function() {
+        location.href = "/servlet/notice_write";
+    });
+}

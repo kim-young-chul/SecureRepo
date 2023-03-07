@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>notice update</title>
 <link rel="stylesheet" href="/resources/css/notice.css" />
-<script type="text/javascript" src="/resources/js/jquery-3.6.3.slim.min.js"></script>
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/js/notice_update.js"></script>
 </head>

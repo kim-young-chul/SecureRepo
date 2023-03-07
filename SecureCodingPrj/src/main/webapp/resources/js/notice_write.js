@@ -1,8 +1,8 @@
 /**
- * notice_write javascript file
+ * Java Script
  */
-$(document).ready(function() {
-	$("#insertNotice").click(function() {
-		document.insertForm.submit();
-	})
-})
+window.onload = function() {
+    document.getElementById("insertNotice").addEventListener("click", function() {
+        document.insertForm.submit();
+    })
+}

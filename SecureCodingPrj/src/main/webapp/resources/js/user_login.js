@@ -1,21 +1,28 @@
 /**
- * 
+ * Java Script
  */
-$(document).ready(function() {
-    $("#userLogin").click(function() {
+window.onload = function() {
+    document.getElementById("userLogin").addEventListener("click", function() {
         let crypt = new Crypt({
-            aesStandard: 'AES-CBC',
+            aesStandard: "AES-CBC",
             aesKeySize: 128,
             aesIvSize: 16,
-            rsaStandard: 'RSA-OAEP'
+            rsaStandard: "RSA-OAEP"
         });
-        let encrypted = crypt.encrypt($("#base64PublicKey").val(), $("#userpw").val());
-        console.log(encrypted);
+
+        let pemkey = document.getElementById("base64PublicKey").value;
+        let userpw = document.getElementById("userpw").value;
+        console.log(pemkey);
+        console.log(userpw);
+
+        let encrypted = crypt.encrypt(pemkey, userpw);
+        json_log(encrypted);
         let base64encrypted = btoa(encrypted);
-        $("#userpw").val(base64encrypted);
+        console.log(base64encrypted);
+        document.getElementById("userpw").value = base64encrypted;
         document.loginForm.submit();
     })
-})
+}
 
 function json_log(encrypted) {
     let json = JSON.parse(encrypted);

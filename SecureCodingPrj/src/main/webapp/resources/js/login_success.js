@@ -1,3 +1,6 @@
-$(document).ready(function() {
-    window.location.replace("/servlet/notice_list");
-})
+/**
+ * Java Script
+ */
+window.onload = function() {
+    location.href = "/servlet/notice_list";
+}
