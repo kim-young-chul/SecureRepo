@@ -11,7 +11,7 @@
 <script type="text/javascript" src="/resources/js/jsencrypt.min.js"></script>
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/js/user_login.js"></script>
-<script type="text/javascript" src="/resources/js/hybrid-crypto.min.js"></script>
+<script type="text/javascript" src="/resources/js/hybrid-crypto-0.2.4.js"></script>
 </head>
 <body>
 	<input type="hidden" id="base64PublicKey" name="base64PublicKey" value="${base64PublicKey}">
