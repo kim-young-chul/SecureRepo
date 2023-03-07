@@ -6,20 +6,28 @@
 package com.spring.mvc.service;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.mockito.Mockito.when;
 
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.KeyPair;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.Base64;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -41,6 +49,8 @@ import com.spring.mvc.vo.KeyPairVo;
 public class LoginServiceTest {
 
     private static final Logger LOG = LogManager.getLogger(LoginServiceTest.class);
+
+    private PrivateKey privateKey;
 
     @Mock
     private UserDao userDao;
@@ -75,11 +85,52 @@ public class LoginServiceTest {
         assertNotNull(keyPairVo);
     }
 
-    @SuppressWarnings({ "unchecked" })
     @Test
     public final void testLoginConfirm() throws Exception {
 
+        UserDto userDto;
+        UserDto userDtoOut;
+        // 아이디, 비밀번호 모두 정상적인 경우
         /* Given */
+        userDto = testLoginConfirmSub("hong-gi-dong2", "hong-password");
+        /* When */
+        when(userDao.userLogin(userDto)).thenReturn(new UserDto());
+        userDtoOut = loginService.loginConfirm(this.privateKey, userDto);
+        /* Then */
+        assertNotNull(userDtoOut);
+
+        // 아이디에 특수문자 입력 시
+        /* Given */
+        userDto = testLoginConfirmSub("<script>alert('hello');</script>", "hong-password");
+        /* When */
+        when(userDao.userLogin(userDto)).thenReturn(null);
+        userDtoOut = loginService.loginConfirm(this.privateKey, userDto);
+        /* Then */
+        assertNull(userDtoOut);
+
+        // 비밀번호에 특수문자 입력 시
+        /* Given */
+        userDto = testLoginConfirmSub("hong-gi-dong2", "<script>alert('hello');</script>");
+        /* When */
+        when(userDao.userLogin(userDto)).thenReturn(null);
+        userDtoOut = loginService.loginConfirm(this.privateKey, userDto);
+        /* Then */
+        assertNull(userDtoOut);
+
+        // 아이디, 비밀번호 모두 특수문자 입력 시
+        userDto = testLoginConfirmSub("<script>alert('hello');</script>", "<script>alert('hello');</script>");
+        /* When */
+        when(userDao.userLogin(userDto)).thenReturn(null);
+        userDtoOut = loginService.loginConfirm(this.privateKey, userDto);
+        /* Then */
+        assertNull(userDtoOut);
+    }
+
+    @SuppressWarnings("unchecked")
+    private UserDto testLoginConfirmSub(final String pUserId, final String pUserPw)
+            throws NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, BadPaddingException,
+            IllegalBlockSizeException, InvalidAlgorithmParameterException, ParseException {
+
         RSAUtil rsaUtil = new RSAUtil();
         AESUtil aesUtil = new AESUtil();
 
@@ -89,6 +140,7 @@ public class LoginServiceTest {
 
         PublicKey publicKey = (PublicKey) keyPair.getPublic();
         PrivateKey privateKey = (PrivateKey) keyPair.getPrivate();
+        this.privateKey = privateKey;
 
         SecretKey secretKey = aesUtil.generateKey("AES", 128);
         byte[] bytesSecKey = secretKey.getEncoded();
@@ -99,7 +151,7 @@ public class LoginServiceTest {
         String rsaEncInput = rsaUtil.encrypt(standardCipher1, publicKey, base64strSecKey);
 
         String standardCipher = "AES/CBC/PKCS5Padding";
-        String plainText = "hong-password";
+        String plainText = pUserPw;
         byte[] base64Text = Base64.getEncoder().encode(plainText.getBytes());
         String base64strText = new String(base64Text, StandardCharsets.UTF_8);
         String base64Encrypt = aesUtil.encrypt(standardCipher, secretKey, base64strText);
@@ -116,7 +168,6 @@ public class LoginServiceTest {
         JSONObject jsonObj = (JSONObject) jsonParser.parse(jsonString);
         LOG.debug("jsonObj.toString() ... {}", jsonObj.toString());
 
-//        JSONObject keys = new JSONObject();
         JSONObject keys;
         jsonObj.replace("iv", base64strIv);
         jsonObj.replace("cipher", base64Encrypt);
@@ -128,14 +179,9 @@ public class LoginServiceTest {
         String strpasswd = new String(bytes, StandardCharsets.UTF_8);
 
         UserDto userDto = new UserDto();
-        userDto.setUserid("hong-gi-dong2");
+        userDto.setUserid(pUserId);
         userDto.setUserpw(strpasswd);
 
-        /* When */
-        when(userDao.userLogin(userDto)).thenReturn(new UserDto());
-        UserDto userDtoOut = loginService.loginConfirm(privateKey, userDto);
-
-        /* Then */
-        assertNotNull(userDtoOut);
+        return userDto;
     }
 }
