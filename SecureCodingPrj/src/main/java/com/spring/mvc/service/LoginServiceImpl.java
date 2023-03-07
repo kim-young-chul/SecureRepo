@@ -86,11 +86,11 @@ public class LoginServiceImpl implements LoginService {
         String decryptedPw = decryptPw(privateKey, userDto);
         userDto.setUserpw(decryptedPw);
         LOG.debug("decryptedPw ... {}", decryptedPw);
-//        if (this.verifyPattern(userDto)) {
-//            String encryptedPw = this.encryptPw(userDto);
-//            userDto.setUserpw(encryptedPw);
+        if (this.verifyPattern(userDto)) {
+            String encryptedPw = this.encryptPw(userDto);
+            userDto.setUserpw(encryptedPw);
             userDtoOut = userDao.userLogin(userDto);
-//        }
+        }
         return userDtoOut;
     }
 
