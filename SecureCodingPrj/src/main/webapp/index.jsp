@@ -6,7 +6,6 @@
 <html lang="ko">
 <head>
 <title>welcome</title>
-<script type="text/javascript" src="/resources/js/jquery-3.6.3.slim.min.js"></script>
 <script type="text/javascript" src="/resources/js/common.js"></script>
 <script type="text/javascript" src="/resources/js/index.js"></script>
 </head>
