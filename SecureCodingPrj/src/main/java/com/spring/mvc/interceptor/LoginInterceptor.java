@@ -53,8 +53,15 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(final HttpServletRequest request, final HttpServletResponse response, final Object handler)
             throws Exception {
-        LOG.debug("userid ... {}", request.getParameter("userid"));
-        LOG.debug("userpw ... {}", request.getParameter("userpw"));
+
+        String userid = request.getParameter("userid");
+        String userpw = request.getParameter("userpw");
+        if (userid != null) {
+            LOG.debug("userid ... {}", userid);
+        }
+        if (userpw != null) {
+            LOG.debug("userpw ... {}", userpw);
+        }
 
         HttpSession session = request.getSession();
         LOG.trace("session.getId ... {}", session.getId());
@@ -83,7 +90,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         UserDto userDto = null;
         userDto = (UserDto) mm.get("LoginSuccess");
 
-        if (userDto != null) {
+        if (userDto.getUserid() != null && userDto.getUserpw() != null) {
             session.invalidate();
             session = request.getSession();
 
