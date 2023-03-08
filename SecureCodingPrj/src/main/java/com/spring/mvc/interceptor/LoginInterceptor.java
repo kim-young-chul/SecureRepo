@@ -90,7 +90,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         UserDto userDto = null;
         userDto = (UserDto) mm.get("LoginSuccess");
 
-        if (userDto.getUserid() != null && userDto.getUserpw() != null) {
+        if (userDto != null && userDto.getUserid() != null && userDto.getUserpw() != null) {
             session.invalidate();
             session = request.getSession();
 
