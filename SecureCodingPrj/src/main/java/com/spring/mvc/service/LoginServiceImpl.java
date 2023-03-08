@@ -145,6 +145,7 @@ public class LoginServiceImpl implements LoginService {
 
         RSAUtil rsaUtil = new RSAUtil();
         final String rsaCipher = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
+
         final String aesEncSecKey = cryptoVo.getKeys().get("value");
         SecretKey aesSeckey = rsaUtil.getSecretKey(rsaCipher, privateKey, aesEncSecKey, "AES");
 
